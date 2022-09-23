@@ -1,13 +1,13 @@
-%%{init: {'themeVariables': {'fontSize': '40px'}}}%%
+%%{init: {'themeVariables': {'fontSize': '30px'}}}%%
 
 graph TD
    
     START(START) --> B[handle request interception]
     B --> C{UM client connected?}
     C -->|no| BB(B)
-    C -->|yes| D{source = kernel?}
-    D -->|no| BB
-    D -->|yes| E{ObjectType == Process?}
+    C -->|yes| D{Source == Kernel?}
+    D -->|yes| BB
+    D -->|no| E{ObjectType == Process?}
     E -->|no| BB
     E -->|yes| F{SrcProcess == DstProcess?}
     F -->|yes| BB
@@ -24,7 +24,7 @@ graph TD
     O --> L[Result saved in cache]
     L --> M{Is app signed by <br/> trusted certificate?}
     M -->|yes| Z
-    M -->|no| N["GrantedAccess = <br/> DesiredAccess | FilteredAccess"]
+    M -->|no| N["GrantedAccess = <br/> DesiredAccess & ~FilteredAccess"]
     N --> Z
     Z --> END(END)
 

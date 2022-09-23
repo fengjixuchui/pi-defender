@@ -23,6 +23,8 @@ Then, the system returns a *handle* associated to this object with the granted r
 Since all process injection techniques need to write in the memory of a remote process, they need a handle with specific rights (PROCESS_VM_WRITE and PROCESS_VM_OPERATION).  
 The technique used by PI-Defender is simply to **remove forbidden access rights on handles associated with remote processes**.
 
+![mermaid_workflow_picture](https://user-images.githubusercontent.com/62078072/189527100-89b83ecd-82b0-48af-9efe-be3369a47986.png)
+
 ### Driver Kernel
 
 #### Handle Rights
